@@ -17,7 +17,7 @@
           "fields": [
             {
               "type": "mrkdwn",
-              "text": "*Author*\n${{ github.payload.pull_request.user.name }}\n<${{ github.payload.pull_request.user.email }}>"
+              "text": "*Author*\n${{ github.payload.pull_request.user.login }}"
             }
           ],
           "accessory": {
