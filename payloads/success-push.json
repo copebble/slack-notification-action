@@ -1,0 +1,59 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:white_check_mark: Succeeded Push*"
+      }
+    }
+  ],
+  "attachments": [
+    {
+      "color": "#47d92e",
+      "blocks": [
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Repo*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}|${{ github.payload.repository.full_name }}>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Commit*\n<${{ github.payload.head_commit.url }}|link>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Author*\n${{ github.payload.head_commit.author.name }} <${{ github.payload.head_commit.author.email }}>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Job*\n`${{ github.job }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Event Name*\n`${{ github.eventName }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Workflow*\n`${{ github.workflow }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Ref*\n${{ github.ref }}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Message*\n${{ github.payload.head_commit.message }}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Build Logs*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}/actions/runs/${{ github.runId }}|View Logs>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

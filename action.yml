@@ -1,0 +1,12 @@
+name: "Slack Notification Action"
+description: "Notificate the results of github actions for copebble projects"
+runs:
+  using: "composite"
+  steps:
+    - name: Notification to Slack Channel
+      uses: slackapi/slack-github-action@v2.1.1
+      with:
+        payload-file-path: "./.github/slack/${{ job.status }}-${{ github.event_name }}.json"
+        payload-templated: true
+        webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+        webhook-type: incoming-webhook

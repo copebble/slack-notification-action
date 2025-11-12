@@ -1,0 +1,65 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:white_check_mark: Succeeded PR Validation*"
+      }
+    }
+  ],
+  "attachments": [
+    {
+      "color": "#47d92e",
+      "blocks": [
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Repo*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}|${{ github.payload.repository.full_name }}>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*PR*\n<${{ github.payload.html_url }}|${{ github.payload.title }}>"
+            },
+            {
+              "type": "section",
+              "fields": [
+                {
+                  "type": "image",
+                  "image_url": "${{ github.payload.user.avatar_url }}",
+                  "alt_text": "User Profile"
+                },
+                {
+                  "type": "mrkdwn",
+                  "text": "*Author*\n${{ github.payload.user.name }} <${{ github.payload.user.email }}>"
+                }
+              ]
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Job*\n`${{ github.job }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Event Name*\n`${{ github.eventName }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Workflow*\n`${{ github.workflow }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Ref*\n${{ github.ref }}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Build Logs*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}/actions/runs/${{ github.runId }}|View Logs>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*:white_check_mark: Succeeded Repository Dispatch*"
+      }
+    }
+  ],
+  "attachments": [
+    {
+      "color": "#47d92e",
+      "blocks": [
+        {
+          "type": "section",
+          "fields": [
+            {
+              "type": "mrkdwn",
+              "text": "*Repo*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}|${{ github.payload.repository.full_name }}>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Trigger Repo*\n<${{ github.serverUrl }}/${{ github.payload.client_payload.repo_name }}|${{ github.payload.client_payload.repo_name }}>"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Job*\n`${{ github.job }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Event Name*\n`${{ github.eventName }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Workflow*\n`${{ github.workflow }}`"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Ref*\n${{ github.ref }}"
+            },
+            {
+              "type": "mrkdwn",
+              "text": "*Build Logs*\n<${{ github.serverUrl }}/${{ github.payload.repository.full_name }}/actions/runs/${{ github.runId }}|View Logs>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
