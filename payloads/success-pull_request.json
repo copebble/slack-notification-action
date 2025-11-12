@@ -13,18 +13,18 @@
       "color": "#47d92e",
       "blocks": [
         {
-          "type": "context",
-          "elements": [
-            {
-              "type": "image",
-              "image_url": "${{ github.payload.pull_request.user.avatar_url }}",
-              "alt_text": "User Profile"
-            },
+          "type": "section",
+          "fields": [
             {
               "type": "mrkdwn",
-              "text": "*Author* ${{ github.payload.pull_request.user.login }}"
+              "text": "*Author*\n${{ github.payload.pull_request.user.login }}"
             }
-          ]
+          ],
+          "accessory": {
+            "type": "image",
+            "image_url": "${{ github.payload.pull_request.user.avatar_url }}",
+            "alt_text": "User Profile"
+          }
         },
         {
           "type": "section",
