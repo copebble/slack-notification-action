@@ -10,7 +10,7 @@ runs:
     - name: Notification to Slack Channel
       uses: slackapi/slack-github-action@v2.1.1
       with:
-        payload-file-path: "./payloads/${{ job.status }}-${{ github.event_name }}.json"
+        payload-file-path: "${{ github.action_path }}/payloads/${{ job.status }}-${{ github.event_name }}.json"
         payload-templated: true
         webhook: ${{ inputs.webhook-url }}
         webhook-type: incoming-webhook
