@@ -14,6 +14,18 @@
       "blocks": [
         {
           "type": "section",
+          "text": {
+            "type": "mrkdwn",
+				    "text": "*Author* ${{ github.payload.user.name }} <${{ github.payload.user.email }}>"
+          },
+          "accessory": {
+            "type": "image",
+            "image_url": "${{ github.payload.user.avatar_url }}",
+            "alt_text": "User Profile"
+          }
+        },
+        {
+          "type": "section",
           "fields": [
             {
               "type": "mrkdwn",
@@ -22,20 +34,6 @@
             {
               "type": "mrkdwn",
               "text": "*PR*\n<${{ github.payload.html_url }}|${{ github.payload.title }}>"
-            },
-            {
-              "type": "section",
-              "fields": [
-                {
-                  "type": "image",
-                  "image_url": "${{ github.payload.user.avatar_url }}",
-                  "alt_text": "User Profile"
-                },
-                {
-                  "type": "mrkdwn",
-                  "text": "*Author*\n${{ github.payload.user.name }} <${{ github.payload.user.email }}>"
-                }
-              ]
             },
             {
               "type": "mrkdwn",
