@@ -2,7 +2,7 @@
 
 ```yaml
 - name: "Notification to Slack Channel"
-  uses: copebble/slack-notification-action@v1
+  uses: copebble/slack-notification-action@v1.6
   if: ${{ success() || failure() }}
 ```
 
